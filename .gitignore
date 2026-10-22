@@ -1,0 +1,15 @@
+# python
+__pycache__/
+*.pyc
+agent_backend/.env
+agent_backend/db.sqlite3
+agent_backend/media/
+agent_backend/staticfiles/
+# node
+agent_admin/node_modules/
+agent_admin/dist/
+agent_admin/.env
+agent_admin/tsconfig.tsbuildinfo
+# os / editor
+.DS_Store
+.vscode/

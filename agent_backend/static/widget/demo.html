@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adaptis widget demo — a client's website</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 0; background: #fbf7f0; color: #333; }
+    header { background: #7a4b2a; color: #fff; padding: 28px 40px; font-size: 28px; }
+    main { padding: 40px; max-width: 760px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <header>Safia Bakery — demo client site</header>
+  <main>
+    <h2>Fresh bread every morning</h2>
+    <p>This page simulates a client's website. The only integration is the one-line script at the bottom of this file.
+       Open it as <code>http://127.0.0.1:8000/static/widget/demo.html?key=ag_…</code> with your agent's public key.</p>
+    <p>The launcher circle should appear bottom-right. Click it to chat.</p>
+  </main>
+  <script>
+    // demo only: read ?key= from the URL and inject the real snippet
+    var k = new URLSearchParams(location.search).get("key");
+    if (k) { var s = document.createElement("script"); s.src = "/static/widget/agent.js"; s.setAttribute("data-agent-key", k); s.async = true; document.body.appendChild(s); }
+    else document.body.insertAdjacentHTML("beforeend", "<p style='padding:0 40px;color:#c00'>Add ?key=YOUR_PUBLIC_KEY to the URL.</p>");
+  </script>
+</body>
+</html>
